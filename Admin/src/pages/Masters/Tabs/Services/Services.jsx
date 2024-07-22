@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+
 import ServiceForm from "./ServiceForm";
 import DataForm from "./DataForm";
 
-const MainComponent = () => {
+const Services = () => {
   const [services, setServices] = useState([]);
   const [serviceData, setServiceData] = useState({});
 
@@ -19,7 +20,7 @@ const MainComponent = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto">
       <ServiceForm addService={addService} />
       <DataForm services={services} addData={addData} />
 
@@ -46,4 +47,4 @@ const MainComponent = () => {
   );
 };
 
-export default MainComponent;
+export default Services;

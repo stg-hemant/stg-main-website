@@ -4,8 +4,8 @@ const CustomInput = (props) => {
   const { title = "", name, ...inputProps } = props;
   const inputId = `${name}-input`;
   return (
-    <div className="mb-4">
-      <label htmlFor={inputId} className="block text-gray-700 font-semibold">
+    <div className="block mb-4">
+      <label htmlFor={inputId} className="text-gray-700">
         {title}
       </label>
       <input

@@ -8,6 +8,9 @@ import {
   FaRocket,
 } from "react-icons/fa";
 
+import CustomInput from "../../../../components/UI/CustomInput";
+import Button from "../../../../components/UI/Buttons";
+
 const DataForm = ({ services, addData }) => {
   const [selectedServiceId, setSelectedServiceId] = useState("");
   const [icon, setIcon] = useState("");
@@ -71,7 +74,7 @@ const DataForm = ({ services, addData }) => {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-4">Add Data to Service</h2>
+      <h2 className="text-2xl font-bold">Add Data to Service</h2>
       <form
         onSubmit={handleDataSubmit}
         className="max-w-md mt-10 p-6 bg-white shadow-md"
@@ -79,7 +82,7 @@ const DataForm = ({ services, addData }) => {
         <label className="block mb-2">
           Select Service:
           <select
-            className="w-full mt-2 p-2 border border-gray-300 rounded"
+            className="w-full mt-2 p-2 border border-gray-300"
             value={selectedServiceId}
             onChange={(event) => setSelectedServiceId(event.target.value)}
           >
@@ -94,7 +97,7 @@ const DataForm = ({ services, addData }) => {
         <label className="block mb-2">
           Icon:
           <select
-            className="w-full mt-2 p-2 border border-gray-300 rounded"
+            className="w-full mt-2 p-2 border border-gray-300"
             value={icon}
             onChange={(event) => setIcon(event.target.value)}
           >
@@ -106,29 +109,23 @@ const DataForm = ({ services, addData }) => {
             ))}
           </select>
         </label>
-        <label className="block mb-2">
-          Heading:
-          <input
-            type="text"
-            className="w-full mt-2 p-2 border border-gray-300 rounded"
-            value={heading}
-            onChange={(event) => setHeading(event.target.value)}
-          />
-        </label>
-        <label className="block mb-2">
+        <CustomInput
+          title="Heading:"
+          type="text"
+          id="heading"
+          name="heading"
+          value={heading}
+          onChange={(event) => setHeading(event.target.value)}
+        />
+        <label className="block mb-4">
           Description:
           <textarea
-            className="w-full mt-2 p-2 border border-gray-300 rounded"
+            className="w-full mt-2 p-2 border border-gray-300"
             value={desc}
             onChange={(event) => setDesc(event.target.value)}
           ></textarea>
         </label>
-        <button
-          type="submit"
-          className="w-full px-4 py-2 bg-black text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
-        >
-          Add Data
-        </button>
+        <Button type="submit">Add Data</Button>
       </form>
     </div>
   );

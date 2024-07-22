@@ -6,16 +6,17 @@ const SideLink = ({ sidebarData }) => {
   return (
     <>
       {sidebarData.map((data) => (
-        <li
-          key={data.id}
-          className={`p-4 hover:bg-black hover:text-white transition-colors duration-500 ${
-            location.pathname === data.link
-              ? "text-white bg-black"
-              : "text-black"
-          }`}
-        >
-          <Link to={data.link}>{data.name}</Link>
-        </li>
+        <Link to={data.link} key={data.id}>
+          <li
+            className={`p-4 hover:bg-black hover:text-white transition-colors duration-500 ${
+              location.pathname === data.link
+                ? "text-white bg-black"
+                : "text-black"
+            }`}
+          >
+            {data.name}
+          </li>
+        </Link>
       ))}
     </>
   );

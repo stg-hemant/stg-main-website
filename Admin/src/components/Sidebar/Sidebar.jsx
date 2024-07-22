@@ -23,7 +23,7 @@ const Sidebar = () => {
   return (
     <aside className="h-screen fixed w-56 bg-gray-100">
       <h2 className="pt-4 font-bold text-xl text-center">ST Global Tech</h2>
-      <ul className="p-2 text-white flex flex-col justify-center gap-6">
+      <ul className="p-2 text-white flex flex-col justify-center gap-4">
         <SideLink sidebarData={sidebar_data} />
         <Button type="button" onClick={logoutHandler}>
           Logout
